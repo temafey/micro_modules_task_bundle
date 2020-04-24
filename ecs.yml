@@ -1,0 +1,14 @@
+imports:
+  - { resource: 'vendor/symplify/easy-coding-standard/config/clean-code.yml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/symfony.yml' }
+  - { resource: 'vendor/symplify/easy-coding-standard/config/php71.yml' }
+
+parameters:
+  skip:
+    SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff.UnusedVariable:
+      - 'src/DependencyInjection/RegisterEventListenerCompilerPass.php'
+    PhpCsFixer\Fixer\FunctionNotation\VoidReturnFixer:
+      - 'src/TaskBundle.php'
+      - 'src/DependencyInjection/RegisterEventListenerCompilerPass.php'
+    SlevomatCodingStandard\Sniffs\TypeHints\TypeHintDeclarationSniff.MissingReturnTypeHint:
+      - 'src/DependencyInjection/RegisterEventListenerCompilerPass.php'

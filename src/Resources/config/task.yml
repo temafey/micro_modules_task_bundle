@@ -1,0 +1,20 @@
+services:
+  MicroModule\Task\Application\Processor\JobEventProcessor:
+    calls:
+      - [setLogger, ['@logger']]
+    tags:
+      - { name: 'enqueue.topic_subscriber', client: 'taskevent' }
+
+  Enqueue\JobQueue\JobRunner:
+    arguments:
+      - '@MicroModule\Task\Application\Processor\JobProcessor'
+
+  MicroModule\Task\Application\Processor\JobProcessor:
+    arguments:
+      - '@Enqueue\JobQueue\Doctrine\JobStorage'
+      - '@enqueue.client.taskevent.producer'
+    calls:
+      - [setLogger, ['@logger']]
+
+  enqueue.job.processor:
+    alias: '@MicroModule\Task\Application\Processor\JobProcessor'
