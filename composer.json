@@ -4,7 +4,7 @@
     "description": "Micro module TaskBundle common library",
     "license": ["proprietary"],
     "require": {
-        "php": "^7.3",
+        "php": "^7.3 || ^8.0",
         "micro-module/task": "^0.4"
     },
     "require-dev": {
