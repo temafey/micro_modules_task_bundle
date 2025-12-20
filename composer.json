@@ -5,7 +5,7 @@
     "license": ["proprietary"],
     "require": {
         "php": "^8.1",
-        "micro-module/task": "^0.6 || ^0.7"
+        "micro-module/task": "^0.6 || ^0.7 || ^0.8"
     },
     "require-dev": {
         "mockery/mockery": "^1.3",
