@@ -48,7 +48,7 @@ class RegisterEventListenerCompilerPass implements CompilerPassInterface
      *
      * @SuppressWarnings(PHPMD)
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (!$container->hasDefinition($this->eventDispatcherId) && !$container->hasAlias($this->eventDispatcherId)) {
             return;
